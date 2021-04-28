@@ -1,0 +1,10 @@
+- name: install zsh
+  community.general.homebrew: 
+    name: zsh
+    state: present
+
+- name: set zsh as default shell
+  user:
+    name: "{{ ansible_env.USER }}"
+    shell: /usr/local/bin/zsh
+  become: yes

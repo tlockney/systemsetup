@@ -1,0 +1,10 @@
+- name: install zsh
+  package:
+    name: zsh
+    state: present
+  become: yes
+
+- name: set zsh as default shell
+  user:
+    name: "{{ ansible_env.USER }}"
+    shell: /usr/bin/zsh
